@@ -12,6 +12,8 @@ class ArticlesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
         //
@@ -30,10 +32,13 @@ class ArticlesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
     public function store(Request $request)
     {
         //
         // return Article::create($request->all());
+        $article = Article::create($request->all());
         return response()->json($article,201);
     }
 
@@ -43,6 +48,8 @@ class ArticlesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
     public function show(Article $article)
     {
         //
@@ -63,6 +70,8 @@ class ArticlesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
     public function update(Request $request, Article $article)
     {
         //
@@ -78,6 +87,8 @@ class ArticlesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
     public function destroy(Article $article)
     {
         //

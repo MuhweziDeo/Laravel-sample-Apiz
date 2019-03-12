@@ -13,11 +13,17 @@ use App\Article;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:api')
+->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('register', 'Auth\RegisterController@register');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout');
+
 // using controllers
+// articles
 Route::get('articles', 'ArticlesController@index');
 Route::get('articles/{article}', 'ArticlesController@show');
 Route::post('articles', 'ArticlesController@store');
